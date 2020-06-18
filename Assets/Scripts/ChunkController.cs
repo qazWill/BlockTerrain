@@ -12,13 +12,13 @@ public class ChunkController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int x = 0; x < 10; x++)
+        for (int x = 0; x < 10; x += 9)
         {
-            for (int y = 0; y < 10; y++)
+            for (int y = 0; y < 10; y += 9)
             {
-                for (int z = 0; z < 10; z++)
+                for (int z = 0; z < 10; z += 9)
                 {
-                    blocks[x,y,z] = Instantiate(blockPrefab, new Vector3(x, y, z), Quaternion.identity) as GameObject;
+                    blocks[x,y,z] = Instantiate(blockPrefab, new Vector3(transform.position.x + x, transform.position.y + y, transform.position.z + z), Quaternion.identity) as GameObject;
                 }
             }
         }
